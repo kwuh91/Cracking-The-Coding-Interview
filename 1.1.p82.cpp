@@ -12,14 +12,14 @@ public:
 	// set
 	static bool one(const std::string& str) {
 		std::set<char> myset;
-		for (char i : str) myset.insert(i);
+		for (const char& i : str) myset.insert(i);
 		return str.size() == myset.size();
 	}
 
 	// hash
 	static bool two(const std::string& str) {
 		std::unordered_map<char, int> umap;
-		for (char i : str) {
+		for (const char& i : str) {
 			if (umap.count(i)) return false;
 			umap[i] = 1;
 		}
